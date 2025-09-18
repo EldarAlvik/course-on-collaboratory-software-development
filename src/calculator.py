@@ -44,6 +44,25 @@ def subtract(a, b):
     return format_result(result)
 
 
+def multiply(a, b):
+    """
+    Multiply two numbers together.
+
+    Args:
+        a (float): First number
+        b (float): Second number
+
+    Returns:
+        float: Product of a and b
+
+    Raises:
+        TypeError: If inputs are not numbers
+    """
+    validate_numbers(a, b)
+    result = a * b
+    return format_result(result)
+
+
 def divide(a, b):
     # TODO: Implement the division function here
     validate_numbers(a, b)
@@ -66,9 +85,8 @@ def main():
             print("Goodbye!")
             break
         # TODO: Add handling for divide operation here
-        if operation not in ["add", "subtract", "divide"]:
+        if operation not in ["add", "subtract", "divide", "multiply"]:
             print("Invalid operation. Please use 'add', 'subtract' or 'divide'")
-            continue
 
         try:
             a = float(input("Enter first number: "))
@@ -83,6 +101,9 @@ def main():
             elif operation == "divide":
                 result = divide(a, b)
                 print(f"Result: {a} / {b} = {result}")
+            elif operation == "multiply":
+                result = multiply(a, b)
+                print(f"Result: {a} * {b} = {result}")
         except ValueError:
             print("Please enter valid numbers")
         except TypeError as e:
