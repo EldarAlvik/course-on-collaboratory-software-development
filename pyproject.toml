@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 license-files = ["LICENSE"]
 dependencies = [
+    "numpy>=2.3.3",
     "ruff>=0.13.0",
 ]
 
